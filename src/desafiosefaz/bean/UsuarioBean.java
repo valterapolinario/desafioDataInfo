@@ -1,15 +1,20 @@
 package desafiosefaz.bean;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import desafiosefaz.model.Usuario;
+import desafiosefaz.src.fachada.UsuarioFachada;
 import desafiosefaz.src.repositorio.UsuarioRepositorio;
 import desafiosefaz.src.repositorio.UsuarioRepositorioImpl;
 @ManagedBean
+@SessionScoped
 public class UsuarioBean {
 	private Usuario usuario ;
 	
-	UsuarioRepositorio RU = new UsuarioRepositorioImpl();
+	UsuarioFachada fachada = new UsuarioFachada();
  
 	
 	public Usuario getUsuario() {
@@ -26,7 +31,15 @@ public class UsuarioBean {
 
 
 	public void cadastrarUsuario() {
-		RU.salvar(usuario);
+		fachada.cadastrarUsuario(usuario);
+	}
+	
+	public List<Usuario>getUsuarios(){
+		return fachada.listarUsuarios();
+	}
+	
+	public String redirecionaCadastro() {
+		return "cadastroUsuario.xhtml";
 	}
 
 }

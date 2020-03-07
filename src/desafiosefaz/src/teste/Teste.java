@@ -1,17 +1,21 @@
 package desafiosefaz.src.teste;
 
+import desafiosefaz.bean.UsuarioBean;
+import desafiosefaz.model.Usuario;
 import desafiosefaz.src.repositorio.UsuarioRepositorio;
 import desafiosefaz.src.repositorio.UsuarioRepositorioImpl;
+import desafiosefaz.src.servico.UsuarioServico;
 
 public class Teste {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		UsuarioRepositorio RU = new UsuarioRepositorioImpl();
-		/*
-		 * Usuario u = new Usuario (); u.setNome("lucas"); u.setEmail("unjg@gmail.com");
-		 * RU.salvar(u);
-		 */
+		UsuarioServico bean = new UsuarioServico();
+		
+		  Usuario u = new Usuario (); 
+		  u.setNome("lucas"); u.setEmail("unjg@gmail.com");
+		  bean.salvar(u);
+		 
 
 		/*
 		 * List<Usuario>usuarios = new ArrayList<>(); usuarios = RU.buscarTodos(); for
@@ -23,7 +27,6 @@ public class Teste {
 		 * usu.setSenha("111"); RU.atualizar(usu);
 		 */
 
-		RU.exluir(RU.buscarPorId(4));
 	}
 
 }
