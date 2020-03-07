@@ -30,6 +30,7 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 	public Usuario buscarPorId(final int id) {
 		Usuario usuario = em.find(Usuario.class, id);
 		return usuario;
+
 	}
 
 	@Override

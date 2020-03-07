@@ -3,12 +3,13 @@ package desafiosefaz.bean;
 import javax.faces.bean.ManagedBean;
 
 import desafiosefaz.model.Usuario;
-import desafiosefaz.src.repositorio.RepositorioUsuarioImplf;
+import desafiosefaz.src.repositorio.UsuarioRepositorio;
+import desafiosefaz.src.repositorio.UsuarioRepositorioImpl;
 @ManagedBean
 public class UsuarioBean {
 	private Usuario usuario ;
 	
-	RepositorioUsuarioImplf RU = new RepositorioUsuarioImplf();
+	UsuarioRepositorio RU = new UsuarioRepositorioImpl();
  
 	
 	public Usuario getUsuario() {

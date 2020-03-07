@@ -15,4 +15,6 @@ public interface UsuarioRepositorio {
 	public void exluir(Usuario usuario);
 
 	public void exluirPorId(int id);
+	
+	public Usuario buscarPorId( int id);
 }

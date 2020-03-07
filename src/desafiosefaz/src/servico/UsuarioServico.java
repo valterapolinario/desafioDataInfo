@@ -20,6 +20,10 @@ public class UsuarioServico {
 	public List<Usuario> listar() {
 		return this.repositorio.buscarTodos();
 	}
+	
+	public Usuario buscar(int id) {
+		return this.repositorio.buscarPorId(id);
+	}
 
 	public void alterar(Usuario usuario) {
 		this.repositorio.atualizar(usuario);

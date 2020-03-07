@@ -1,0 +1,43 @@
+package desafiosefaz.src.fachada;
+
+import java.util.List;
+
+import desafiosefaz.model.Usuario;
+import desafiosefaz.src.servico.UsuarioServico;
+
+public class UsuarioFachada {
+
+	private static UsuarioServico usuarioServicoInstancia;
+
+	public UsuarioFachada() {
+		this.usuarioServicoInstancia = new UsuarioServico();
+	}
+
+	public static UsuarioServico getServicoInstancia() {
+		if (usuarioServicoInstancia == null) {
+			usuarioServicoInstancia = new UsuarioServico();
+		}
+		return usuarioServicoInstancia;
+	}
+
+	public void cadastrarUsuario(Usuario usuario) {
+		usuarioServicoInstancia.salvar(usuario);
+	}
+
+	public List<Usuario> listarUsuarios() {
+		return usuarioServicoInstancia.listar();
+	}
+
+	public Usuario buscarUsuario(int id) {
+		return usuarioServicoInstancia.buscar(id);
+	}
+
+	public void atualizarUsuario(Usuario usuario) {
+		usuarioServicoInstancia.alterar(usuario);
+	}
+
+	public void removerUsuario(int id) {
+		usuarioServicoInstancia.deletarPorId(id);
+	}
+
+}
