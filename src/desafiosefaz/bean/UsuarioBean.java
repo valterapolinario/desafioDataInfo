@@ -41,5 +41,10 @@ public class UsuarioBean {
 	public String redirecionaCadastro() {
 		return "cadastroUsuario.xhtml";
 	}
+	
+	public String exluir(Usuario usuario) {
+		fachada.removerUsuario(usuario.getId());
+		return "tabelaUsuarios.xhtml";
+	}
 
 }
