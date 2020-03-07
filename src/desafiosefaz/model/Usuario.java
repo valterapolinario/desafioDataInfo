@@ -16,7 +16,7 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_usuario")
-	private int id;
+	private Integer id;
 	@Column
 	private String nome;
 	@Column
@@ -32,11 +32,11 @@ public class Usuario {
 	}
 
 	public Usuario(int id, String nome, String email, String senha) {
-		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
+
 	}
 
 	public String getNome() {

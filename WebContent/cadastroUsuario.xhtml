@@ -19,11 +19,8 @@
 				<b:inputText id="nome" placeholder="Nome" value="#{usuarioBean.usuario.nome}"/>
 				<b:inputText id="email" placeholder="Email" value="#{usuarioBean.usuario.email}"/>
 				<b:inputText id="senha" placeholder="Senha" type="password" value="#{usuarioBean.usuario.senha}"/>
-				<b:commandButton action="#{usuarioBean.cadastrarUsuario}" look="primary btn-block" value="Entrar" />
-				<div align="center">
-				<br/>
-				<b:commandLink value="Faça login." action="login.xhtml?faces-redirect=true"/>
-				 </div>
+				<b:commandButton action="#{usuarioBean.cadastrarUsuario}" look="primary btn-block" value="Cadastrar" />
+				
 			</div>
 		</div>
 	</h:form>

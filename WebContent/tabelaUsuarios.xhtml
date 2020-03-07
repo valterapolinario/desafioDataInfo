@@ -70,18 +70,15 @@
 									<tbody>
 
 
-										<ui:repeat var="usuario"
-											value="#{usuarioBean.usuarios}">
+										<ui:repeat var="usuario" value="#{usuarioBean.usuarios}">
 											<tr>
 												<td>${usuario.nome}</td>
 												<td>${usuario.email}</td>
 
 												<td><i class="far fa-edit"></i> <h:commandButton
-														value="Editar"
-														action="${usuarioBean.alterar(usuario)}" /></td>
-												<td><i class="fas fa-trash-alt"></i>
-												<h:commandButton value="deletar"
-														action="${usuarioBean.exluir(usuario)}" /></td>
+														value="Editar" action="${usuarioBean.alterar(usuario)}" /></td>
+												<td><i class="fas fa-trash-alt"></i> <h:commandButton
+														value="deletar" action="${usuarioBean.exluir(usuario)}" /></td>
 											</tr>
 										</ui:repeat>
 
