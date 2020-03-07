@@ -46,5 +46,10 @@ public class UsuarioBean {
 		fachada.removerUsuario(usuario.getId());
 		return "tabelaUsuarios.xhtml";
 	}
+	
+	public String alterar(Usuario obj) {
+		this.usuario = obj;
+		return "atualizaUsuario.xhtml";
+	}
 
 }
