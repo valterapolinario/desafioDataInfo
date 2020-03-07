@@ -1,27 +1,42 @@
 package desafiosefaz.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "usuarios")
 public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_usuario")
-	private int id ;
+	private int id;
 	@Column
-	private String nome ;
-	@Column // deixa eu fazer o exemplo no manegerBean manda brasa
-	private String Email;
+	private String nome;
+	@Column
+	private String email;
+	@Column
 	private String senha;
-	
-	public Usuario () {
-		
+
+	@OneToMany(mappedBy = "usuario")
+	private List<Telefone> telefones = new ArrayList<>();
+
+	public Usuario() {
+
+	}
+
+	public Usuario(int id, String nome, String email, String senha) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
 	}
 
 	public String getNome() {
@@ -49,12 +64,19 @@ public class Usuario {
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
-	
+
+	public List<Telefone> getTelefones() {
+		return telefones;
+	}
+
+	public void setTelefones(List<Telefone> telefones) {
+		this.telefones = telefones;
+	}
 
 }

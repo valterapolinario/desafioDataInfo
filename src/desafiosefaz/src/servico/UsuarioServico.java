@@ -1,0 +1,36 @@
+package desafiosefaz.src.servico;
+
+import java.util.List;
+
+import desafiosefaz.model.Usuario;
+import desafiosefaz.src.repositorio.UsuarioRepositorio;
+import desafiosefaz.src.repositorio.UsuarioRepositorioImpl;
+
+public class UsuarioServico {
+	private UsuarioRepositorio repositorio;
+
+	public UsuarioServico() {
+		this.repositorio = new UsuarioRepositorioImpl();
+	}
+
+	public void salvar(Usuario usuario) {
+		this.repositorio.salvar(usuario);
+	}
+
+	public List<Usuario> listar() {
+		return this.repositorio.buscarTodos();
+	}
+
+	public void alterar(Usuario usuario) {
+		this.repositorio.atualizar(usuario);
+	}
+
+	public void deletar(Usuario usuario) {
+		this.repositorio.exluir(usuario);
+	}
+
+	public void deletarPorId(int id) {
+		this.repositorio.exluirPorId(id);
+	}
+
+}
