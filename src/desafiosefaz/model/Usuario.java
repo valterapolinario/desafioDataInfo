@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Range;
+
 @Entity
 public class Usuario {
 	@Id
@@ -24,6 +26,13 @@ public class Usuario {
 	private String email;
 	@Column
 	private String senha;
+	@Column
+	@Range(min = 11,max = 99 ,message = " o ddd varia entre 11 e 99")
+	private int ddd ;
+	@Column
+	private String numero;
+	@Column
+	private String tipo;
 
 	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
 	private List<Telefone> telefones = new ArrayList<>();
@@ -32,13 +41,20 @@ public class Usuario {
 
 	}
 
-	public Usuario(int id, String nome, String email, String senha) {
+
+
+	public Usuario(Integer id, String nome, String email, String senha, int ddd, String numero, String tipo) {
+		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
-
+		this.ddd = ddd;
+		this.numero = numero;
+		this.tipo = tipo;
 	}
+
+
 
 	public String getNome() {
 		return nome;
@@ -78,6 +94,30 @@ public class Usuario {
 
 	public void setTelefones(List<Telefone> telefones) {
 		this.telefones = telefones;
+	}
+
+	public int getDdd() {
+		return ddd;
+	}
+
+	public void setDdd(int ddd) {
+		this.ddd = ddd;
+	}
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 }

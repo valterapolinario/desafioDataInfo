@@ -61,6 +61,8 @@
 										<tr>
 											<th>nome</th>
 											<th>email</th>
+											<th>telefone</th>
+											<th>tipo</th>
 											<th>editar</th>
 											<th>excluir</th>
 
@@ -74,6 +76,8 @@
 											<tr>
 												<td>${usuario.nome}</td>
 												<td>${usuario.email}</td>
+												<td>${usuario.numero}</td>
+												<td>${usuario.tipo}</td>
 
 												<td><i class="far fa-edit"></i> <h:commandButton
 														value="Editar" action="${usuarioBean.alterar(usuario)}" /></td>

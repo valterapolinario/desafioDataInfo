@@ -14,11 +14,14 @@
 	<h:form>
 		<div class="container">
 			<div class="box">
-			<b:message/>
+			<h:message/>
 				<h2 align="center">Alterar Usuario</h2>      		<!-- Metodo , Classe usuario e o get no nome -->
 				<b:inputText id="nome" placeholder="Nome" value="#{usuarioBean.usuario.nome}"/>
 				<b:inputText id="email" placeholder="Email" value="#{usuarioBean.usuario.email}"/>
 				<b:inputText id="senha" placeholder="Senha" type="password" value="#{usuarioBean.usuario.senha}"/>
+				<b:inputText id="ddd" placeholder="ddd"  value="#{usuarioBean.usuario.ddd}"/>
+				<b:inputText id="numero" placeholder="numero do telefone" type="number"  value="#{usuarioBean.usuario.numero}"/>
+				<b:inputText id="tipo" placeholder="tipo"  value="#{usuarioBean.usuario.tipo}"/>
 				<b:commandButton action="#{usuarioBean.cadastrarUsuario}" look="primary btn-block" value="Atualizar" />
 				
 			</div>
