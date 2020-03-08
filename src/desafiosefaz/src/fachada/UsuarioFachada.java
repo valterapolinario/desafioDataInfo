@@ -40,4 +40,7 @@ public class UsuarioFachada {
 		usuarioServicoInstancia.deletarPorId(id);
 	}
 
+	public boolean verificaUsuarioLogin(String email, String senha) {
+		return usuarioServicoInstancia.verificaAcessoLogin(email, senha);
+	}
 }

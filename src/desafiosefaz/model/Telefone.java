@@ -65,4 +65,12 @@ public class Telefone {
 		this.tipo = tipo;
 	}
 
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 }

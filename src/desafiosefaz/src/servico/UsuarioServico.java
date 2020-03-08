@@ -20,7 +20,7 @@ public class UsuarioServico {
 	public List<Usuario> listar() {
 		return this.repositorio.buscarTodos();
 	}
-	
+
 	public Usuario buscar(int id) {
 		return this.repositorio.buscarPorId(id);
 	}
@@ -35,6 +35,19 @@ public class UsuarioServico {
 
 	public void deletarPorId(int id) {
 		this.repositorio.exluirPorId(id);
+	}
+
+	public Usuario acessoLogin(String email, String senha) {
+		return this.repositorio.VerificaAcesso(email, senha);
+
+	}
+
+	public boolean verificaAcessoLogin(String email, String senha) {
+		if (acessoLogin(email, senha) == null) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 }

@@ -17,4 +17,6 @@ public interface UsuarioRepositorio {
 	public void exluirPorId(int id);
 	
 	public Usuario buscarPorId( int id);
+	
+	public Usuario VerificaAcesso( String email,String senha);
 }

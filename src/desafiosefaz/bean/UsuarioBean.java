@@ -50,4 +50,15 @@ public class UsuarioBean {
 		return "atualizaUsuario.xhtml";
 	}
 
+	public String Login() {
+		boolean logado = fachada.verificaUsuarioLogin(usuario.getEmail(), usuario.getSenha());
+
+		if (logado == true) {
+			System.out.println("logado com sucesso");
+			return "tabelaUsuarios";
+		} else {
+			System.out.println("login não encontrado");
+			return "cadastro usuario";
+		}
+	}
 }
