@@ -58,14 +58,13 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 		em.getTransaction().commit();
 
 	}
-
-	@Override
 	public Usuario VerificaAcesso(String email, String senha) {
 		try {
 			Usuario usuario = (Usuario) em
-					.createQuery(
-							"SELECT Usuario from Usuario us WHERE us.email= \r\n" + "    :email AND us.senha = :senha")
+					.createQuery("SELECT usuario from Usuario usuario where usuario.email= \r\n"
+							+ "	             :email and usuario.senha = :senha")
 					.setParameter("email", email).setParameter("senha", senha).getSingleResult();
+
 			return usuario;
 		} catch (NoResultException e) {
 			return null;

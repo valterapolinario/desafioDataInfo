@@ -11,17 +11,31 @@ public class Teste {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		UsuarioServico bean = new UsuarioServico();
-		Telefone telefone = new Telefone();
-		
-		  Usuario u = new Usuario (); 
+		/*
+		 * UsuarioServico bean = new UsuarioServico(); Telefone telefone = new
+		 * Telefone();
+		 * 
+		 * Usuario u = new Usuario ();
+		 */
 		  
-		 /* telefone.setDdd(81);
-		  telefone.setNumero("996651727");
-		  telefone.setTipo("celular");
-		  u.setNome("lucas"); u.setEmail("unjg@gmail.com");
-		  u.getTelefones().add(telefone);
-		  bean.salvar(u);*/
+		  UsuarioRepositorioImpl UR = new UsuarioRepositorioImpl();
+		  
+		  
+		 Usuario usu = UR.VerificaAcesso("wagner", "3347");
+		  if(usu != null) {
+			  System.out.println("PODE ACESSAR , TEM EMAIL E SENHA NO BANCO");
+		  }else {
+			  System.out.println("não tem acesso , retorno é null");
+		  }
+		  
+		  
+		  
+		/*
+		 * telefone.setDdd(81); telefone.setNumero("996651727");
+		 * telefone.setTipo("celular"); u.setNome("lucas");
+		 * u.setEmail("unjg@gmail.com"); telefone.setUsuario(u);
+		 * u.getTelefones().add(telefone); bean.salvar(u);
+		 */
 		 
 
 		/*
@@ -33,7 +47,7 @@ public class Teste {
 		 * Usuario usu = new Usuario(); usu.setId(1); usu.setNome("lucas");
 		 * usu.setSenha("111"); RU.atualizar(usu);
 		 */
-		  u.getTelefones().add(null);
+		//  u.getTelefones().add(null);
 	}
 
 }
