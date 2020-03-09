@@ -12,7 +12,7 @@ public class UsuarioFachada {
 	public UsuarioFachada() {
 		this.usuarioServicoInstancia = new UsuarioServico();
 	}
-
+	// implementação de singleton na fachada
 	public static UsuarioServico getServicoInstancia() {
 		if (usuarioServicoInstancia == null) {
 			usuarioServicoInstancia = new UsuarioServico();
