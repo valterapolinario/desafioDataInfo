@@ -16,13 +16,13 @@
 			<div class="box">
 			<b:message/>
 				<h2 align="center">Cadastro Usuario</h2>      		<!-- Metodo , Classe usuario e o get no nome -->
-				<b:inputText id="nome" placeholder="Nome" value="#{usuarioBean.usuario.nome}"/>
-				<b:inputText id="email" placeholder="Email" value="#{usuarioBean.usuario.email}"/>
-				<b:inputText id="senha" placeholder="Senha" type="password" value="#{usuarioBean.usuario.senha}"/>
-				<b:inputText id="ddd" placeholder="ddd"  value="#{usuarioBean.usuario.ddd}"/>
-				<b:inputText id="numero" placeholder="numero do telefone" type="number"  value="#{usuarioBean.usuario.numero}"/>
-				<b:inputText id="tipo" placeholder="tipo"  value="#{usuarioBean.usuario.tipo}"/>
-				<h:commandButton action="#{usuarioBean.cadastrarUsuario}" look="primary btn-block" value="Cadastrar" />
+				<b:inputText id="nome" placeholder="Nome" value="#{usuarioCadastroBean.usuario.nome}"/>
+				<b:inputText id="email" placeholder="Email" value="#{usuarioCadastroBean.usuario.email}"/>
+				<b:inputText id="senha" placeholder="Senha" type="password" value="#{usuarioCadastroBean.usuario.senha}"/>
+				<b:inputText id="ddd" placeholder="ddd"  value="#{usuarioCadastroBean.usuario.ddd}"/>
+				<b:inputText id="numero" placeholder="numero do telefone" type="number"  value="#{usuarioCadastroBean.usuario.numero}"/>
+				<b:inputText id="tipo" placeholder="tipo"  value="#{usuarioCadastroBean.usuario.tipo}"/>
+				<h:commandButton action="#{usuarioCadastroBean.cadastrarUsuario}" look="primary btn-block" value="Cadastrar" />
 				
 			</div>
 		</div>

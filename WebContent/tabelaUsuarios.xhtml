@@ -44,7 +44,7 @@
 				<h:form>
 					<button type="button" class="btn btn-dark">
 						<h:link value="Novo Cadastro"
-							outcome="${usuarioBean.redirecionaCadastro()}"
+							outcome="${usuarioListarBean.redirecionaCadastro()}"
 							style="color:white" />
 					</button>
 
@@ -72,7 +72,7 @@
 									<tbody>
 
 
-										<ui:repeat var="usuario" value="#{usuarioBean.usuarios}">
+										<ui:repeat var="usuario" value="#{usuarioListarBean.usuarios}">
 											<tr>
 												<td>${usuario.nome}</td>
 												<td>${usuario.email}</td>
@@ -80,9 +80,9 @@
 												<td>${usuario.tipo}</td>
 
 												<td><i class="far fa-edit"></i> <h:commandButton
-														value="Editar" action="${usuarioBean.alterar(usuario)}" /></td>
+														value="Editar" action="${usuarioAtualizaBean.alterar(usuario)}" /></td>
 												<td><i class="fas fa-trash-alt"></i> <h:commandButton
-														value="deletar" action="${usuarioBean.exluir(usuario)}" /></td>
+														value="deletar" action="${usuarioListarBean.exluir(usuario)}" /></td>
 											</tr>
 										</ui:repeat>
 

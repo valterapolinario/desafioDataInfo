@@ -3,6 +3,7 @@ package desafiosefaz.bean;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
 import desafiosefaz.model.Usuario;
@@ -12,7 +13,7 @@ import desafiosefaz.src.repositorio.UsuarioRepositorioImpl;
 
 @ManagedBean
 @SessionScoped
-public class UsuarioBean {
+public class UsuarioListarBean {
 	private Usuario usuario;
 
 	UsuarioFachada fachada = new UsuarioFachada();
@@ -28,37 +29,20 @@ public class UsuarioBean {
 		this.usuario = usuario;
 	}
 
-	public void cadastrarUsuario() {
-		fachada.cadastrarUsuario(usuario);
-	}
-
 	public List<Usuario> getUsuarios() {
 		return fachada.listarUsuarios();
-	}
-
-	public String redirecionaCadastro() {
-		return "cadastroUsuario.xhtml";
 	}
 
 	public String exluir(Usuario usuario) {
 		fachada.removerUsuario(usuario.getId());
 		return "tabelaUsuarios.xhtml";
 	}
-
 	public String alterar(Usuario obj) {
 		this.usuario = obj;
 		return "atualizaUsuario.xhtml";
 	}
-
-	public String Login() {
-		boolean logado = fachada.verificaUsuarioLogin(usuario.getEmail(), usuario.getSenha());
-
-		if (logado == true) {
-			System.out.println("logado com sucesso");
-			return "tabelaUsuarios";
-		} else {
-			System.out.println("login não encontrado");
-			return "cadastro usuario";
-		}
+	public String redirecionaCadastro() {
+		return "cadastroUsuario.xhtml";
 	}
+
 }

@@ -1,6 +1,6 @@
 package desafiosefaz.src.teste;
 
-import desafiosefaz.bean.UsuarioBean;
+import desafiosefaz.bean.UsuarioCadastroBean;
 import desafiosefaz.model.Telefone;
 import desafiosefaz.model.Usuario;
 import desafiosefaz.src.repositorio.UsuarioRepositorio;
