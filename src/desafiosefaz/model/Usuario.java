@@ -5,15 +5,19 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Range;
+import org.hibernate.validator.constraints.pl.REGON;
 
 @Entity
 public class Usuario {
@@ -22,17 +26,23 @@ public class Usuario {
 	@Column(name = "id_usuario")
 	private Integer id;
 	@Column
+	@NotNull(message = " insira um nome")
 	private String nome;
 	@Column
+	@NotNull(message = "insira um email")
+	@Pattern(regexp = "/^([\\w\\.\\-]+)@([\\w\\-]+)((\\.(\\w){2,4})+)$/i",message = "insira um email valido")
 	private String email;
 	@Column
+	@NotNull(message = "insira a senha")
 	private String senha;
 	@Column
 	@Range(min = 11,max = 99 ,message = " o ddd varia entre 11 e 99")
 	private int ddd ;
 	@Column
+	@NotNull(message = "insira o numero de telefone")
 	private String numero;
 	@Column
+	@NotNull(message = "insira o tipo do telefone")
 	private String tipo;
 
 	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)

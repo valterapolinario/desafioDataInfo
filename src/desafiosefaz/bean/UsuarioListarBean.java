@@ -6,10 +6,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
+import desafiosefaz.fachada.UsuarioFachada;
 import desafiosefaz.model.Usuario;
-import desafiosefaz.src.fachada.UsuarioFachada;
-import desafiosefaz.src.repositorio.UsuarioRepositorio;
-import desafiosefaz.src.repositorio.UsuarioRepositorioImpl;
+import desafiosefaz.repositorio.UsuarioRepositorio;
+import desafiosefaz.repositorio.UsuarioRepositorioImpl;
 
 @ManagedBean
 @SessionScoped

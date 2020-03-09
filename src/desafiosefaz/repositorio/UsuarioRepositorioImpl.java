@@ -1,4 +1,4 @@
-package desafiosefaz.src.repositorio;
+package desafiosefaz.repositorio;
 
 import java.util.List;
 

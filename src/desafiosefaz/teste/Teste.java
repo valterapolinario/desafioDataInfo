@@ -1,11 +1,11 @@
-package desafiosefaz.src.teste;
+package desafiosefaz.teste;
 
 import desafiosefaz.bean.UsuarioCadastroBean;
 import desafiosefaz.model.Telefone;
 import desafiosefaz.model.Usuario;
-import desafiosefaz.src.repositorio.UsuarioRepositorio;
-import desafiosefaz.src.repositorio.UsuarioRepositorioImpl;
-import desafiosefaz.src.servico.UsuarioServico;
+import desafiosefaz.repositorio.UsuarioRepositorio;
+import desafiosefaz.repositorio.UsuarioRepositorioImpl;
+import desafiosefaz.servico.UsuarioServico;
 
 public class Teste {
 

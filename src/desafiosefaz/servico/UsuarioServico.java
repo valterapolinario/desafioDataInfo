@@ -1,10 +1,10 @@
-package desafiosefaz.src.servico;
+package desafiosefaz.servico;
 
 import java.util.List;
 
 import desafiosefaz.model.Usuario;
-import desafiosefaz.src.repositorio.UsuarioRepositorio;
-import desafiosefaz.src.repositorio.UsuarioRepositorioImpl;
+import desafiosefaz.repositorio.UsuarioRepositorio;
+import desafiosefaz.repositorio.UsuarioRepositorioImpl;
 
 public class UsuarioServico {
 	private UsuarioRepositorio repositorio;

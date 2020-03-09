@@ -1,9 +1,9 @@
-package desafiosefaz.src.fachada;
+package desafiosefaz.fachada;
 
 import java.util.List;
 
 import desafiosefaz.model.Usuario;
-import desafiosefaz.src.servico.UsuarioServico;
+import desafiosefaz.servico.UsuarioServico;
 
 public class UsuarioFachada {
 
