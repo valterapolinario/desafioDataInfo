@@ -26,20 +26,21 @@ public class Usuario {
 	@Column(name = "id_usuario")
 	private Integer id;
 	@Column
-	@NotNull(message = " insira um nome")
+	@NotNull(message = " informe um nome")
 	private String nome;
 	@Column
-	@NotNull(message = "insira um email")
-	@Pattern(regexp = "/^([\\w\\.\\-]+)@([\\w\\-]+)((\\.(\\w){2,4})+)$/i",message = "insira um email valido")
+	@NotNull(message = "informe um email")
+	@Email(message = "informe um email valido")
 	private String email;
 	@Column
-	@NotNull(message = "insira a senha")
+	@NotNull(message = "informe a senha")
 	private String senha;
 	@Column
 	@Range(min = 11,max = 99 ,message = " o ddd varia entre 11 e 99")
 	private int ddd ;
 	@Column
 	@NotNull(message = "insira o numero de telefone")
+	@Pattern(regexp = "(\\b[0-9]\\b)/g")
 	private String numero;
 	@Column
 	@NotNull(message = "insira o tipo do telefone")

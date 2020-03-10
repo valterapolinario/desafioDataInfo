@@ -11,22 +11,29 @@
 </h:head>
 <h:body>
 <b:container>
-	<h:form>
+
+	<b:form>
+	
 		<div class="container">
 			<div class="box">
-			<h:message/>
+			
 				<h2 align="center">Alterar Usuario</h2>      		<!-- Metodo , Classe usuario e o get no nome -->
-				<b:inputText id="nome" placeholder="Nome" value="#{usuarioAtualizaBean.usuario.nome}"/>
-				<b:inputText id="email" placeholder="Email" value="#{usuarioAtualizaBean.usuario.email}"/>
+				<b:inputText id="nome"  label="digite seu nome" value="#{usuarioAtualizaBean.usuario.nome}" />
+				<b:message for="@previous"/>
+				<b:inputText id="email" label="digite seu email" value="#{usuarioAtualizaBean.usuario.email}"/>
+				<b:message for="@previous"/>
 				<b:inputText id="senha" placeholder="Senha" type="password" value="#{usuarioAtualizaBean.usuario.senha}"/>
+				<b:message for="@previous"/>
 				<b:inputText id="ddd" placeholder="ddd"  value="#{usuarioAtualizaBean.usuario.ddd}"/>
+				<b:message for="@previous"/>
 				<b:inputText id="numero" placeholder="numero do telefone" type="number"  value="#{usuarioAtualizaBean.usuario.numero}"/>
 				<b:inputText id="tipo" placeholder="tipo"  value="#{usuarioAtualizaBean.usuario.tipo}"/>
+				<b:message for="@previous"/>
 				<b:commandButton action="#{usuarioAtualizaBean.atualizarUsuario()}" look="primary btn-block" value="Atualizar" />
 				
 			</div>
 		</div>
-	</h:form>
+	</b:form>
 </b:container>
 </h:body>
 </html>
