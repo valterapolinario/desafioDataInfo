@@ -1,6 +1,8 @@
 package desafiosefaz.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -27,33 +29,35 @@ public class Usuario {
 	private Integer id;
 	@Column
 	@NotNull(message = " informe um nome")
+	// @Pattern(regexp = "/^[a-z](?:[a-z]| (?! |$))",message = "Informe um nome
+	// valido")
 	private String nome;
 	@Column
 	@NotNull(message = "informe um email")
 	@Email(message = "informe um email valido")
 	private String email;
 	@Column
-	@NotNull(message = "informe a senha")
+	@NotNull(message = "informe a senha logo")
 	private String senha;
 	@Column
-	@Range(min = 11,max = 99 ,message = " o ddd varia entre 11 e 99")
-	private int ddd ;
+	@Range(min = 11, max = 99, message = " o ddd varia entre 11 e 99")
+	private int ddd;
 	@Column
 	@NotNull(message = "insira o numero de telefone")
-	@Pattern(regexp = "(\\b[0-9]\\b)/g")
+	// @Pattern(regexp = "(\\b[0-9]\\b)/g",message = "apenas numeros")
 	private String numero;
 	@Column
-	@NotNull(message = "insira o tipo do telefone")
+	// @NotNull(message = "insira o tipo do telefone")
 	private String tipo;
+	@Column
+	private Date dataNascimento;
 
-	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	private List<Telefone> telefones = new ArrayList<>();
 
 	public Usuario() {
 
 	}
-
-
 
 	public Usuario(Integer id, String nome, String email, String senha, int ddd, String numero, String tipo) {
 		super();
@@ -65,8 +69,6 @@ public class Usuario {
 		this.numero = numero;
 		this.tipo = tipo;
 	}
-
-
 
 	public String getNome() {
 		return nome;
@@ -131,5 +133,15 @@ public class Usuario {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+	
+	// verificado
 
 }

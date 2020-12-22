@@ -1,14 +1,10 @@
 package desafiosefaz.bean;
 
-import java.util.List;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import desafiosefaz.fachada.UsuarioFachada;
 import desafiosefaz.model.Usuario;
-import desafiosefaz.repositorio.UsuarioRepositorio;
-import desafiosefaz.repositorio.UsuarioRepositorioImpl;
 
 @ManagedBean
 @SessionScoped

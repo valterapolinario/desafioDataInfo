@@ -3,36 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:b="http://bootsfaces.net/ui" 
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<h:outputStylesheet name="css/style.css" />
 	<title>Cadastro de Usuários</title>
 </h:head>
 <h:body>
+
 <b:container>
-	<b:form>
+
+	<h:form >
+	<p:messages autoUpdate="true">
+
+</p:messages>
 		<div class="container">
 			<div class="box">
-			<b:message/>
+				
 				<h2 align="center">Cadastro Usuario</h2>      		<!-- Metodo , Classe usuario e o get no nome -->
 				<b:inputText id="nome" placeholder="Nome" value="#{usuarioCadastroBean.usuario.nome}" />
 				<b:message for="@previous"/>
+				<b:focus target="@previous" />
 				<b:inputText id="email" placeholder="Email" value="#{usuarioCadastroBean.usuario.email}"/>
 				<b:message for="@previous"/>
-				<b:inputText id="senha" placeholder="Senha" type="password" value="#{usuarioCadastroBean.usuario.senha}"/>
+				
+				
+				<p:password id="senha" feedback="true" weakLabel="Muito Fraca"
+				 goodLabel="Senha razoavel" strongLabel="Senha forte" inline="true"
+				 promptLabel="Informe uma senha" match="confirma" required="true"
+				 requiredMessage="A senha é obrigatoria"
+				 validatorMessage="A senha e a confirmação estão diferentes"
+				 value="#{usuarioCadastroBean.usuario.senha}" placeholder="Senha" />
+				 
+				 
+				 <p:password id="confirma" required="true" placeholder="Confime a senha"/> 
+				
+			
 				<b:message for="@previous"/>
 				<b:inputText id="ddd" placeholder="ddd"  value="#{usuarioCadastroBean.usuario.ddd}" maxlength="2" />
 				<b:message for="@previous"/>
-				<b:inputText id="numero" placeholder="numero do telefone" type="number"  value="#{usuarioCadastroBean.usuario.numero}"/>
+				<b:inputText id="numero" placeholder="numero do telefone" type="text"  value="#{usuarioCadastroBean.usuario.numero}"/>
 				<b:message for="@previous"/>
 				<b:inputText id="tipo" placeholder="tipo"  value="#{usuarioCadastroBean.usuario.tipo}"/>
 				<b:message for="@previous"/>
-				<h:commandButton action="#{usuarioCadastroBean.cadastrarUsuario}" look="primary btn-block" value="Cadastrar" />
-				
+				<b:inputText id="dataNascimento" mask="dd/mm/yyyy" placeholder="dataNascimento" value="#{usuarioCadastroBean.usuario.dataNascimento}">
+				<f:convertDateTime pattern="dd/MM/yyyy"/>
+				</b:inputText>
+				<p:commandButton action="#{usuarioCadastroBean.cadastrarUsuario}" look="primary btn-block" value="Cadastrar"  />
+
 			</div>
 		</div>
-	</b:form>
+	</h:form>
 </b:container>
 </h:body>
 </html>

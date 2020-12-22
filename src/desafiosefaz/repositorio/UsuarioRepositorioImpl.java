@@ -58,7 +58,7 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 		em.getTransaction().commit();
 
 	}
-	public Usuario VerificaAcesso(String email, String senha) {
+	public Usuario verificaAcesso(String email, String senha) {
 		try {
 			Usuario usuario = (Usuario) em
 					.createQuery("SELECT usuario from Usuario usuario where usuario.email= \r\n"

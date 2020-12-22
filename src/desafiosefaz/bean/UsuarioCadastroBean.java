@@ -1,19 +1,17 @@
 package desafiosefaz.bean;
 
-import java.util.List;
-
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
-import desafiosefaz.model.Usuario;
 import desafiosefaz.fachada.UsuarioFachada;
-import desafiosefaz.repositorio.UsuarioRepositorio;
-import desafiosefaz.repositorio.UsuarioRepositorioImpl;
+import desafiosefaz.model.Usuario;
 
 @ManagedBean
 @RequestScoped
 public class UsuarioCadastroBean {
+
 	private Usuario usuario;
 
 	UsuarioFachada fachada = new UsuarioFachada();
@@ -30,8 +28,20 @@ public class UsuarioCadastroBean {
 	}
 
 	public String cadastrarUsuario() {
-		fachada.cadastrarUsuario(usuario);
-		return "tabelaUsuarios.xhtml";
+		try {
+			fachada.cadastrarUsuario(usuario);
+			FacesContext contexto = FacesContext.getCurrentInstance();
+			FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Usuario Cadastrado com sucesso",
+					"sucesso");
+			contexto.addMessage(null, msg);
+			return null;
+		} catch (Exception e) {
+			FacesContext contexto = FacesContext.getCurrentInstance();
+			FacesMessage mensagem = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!" + e.getMessage(), "");
+			contexto.addMessage(null, mensagem);
+			return null;
+		}
+
 	}
 
 }

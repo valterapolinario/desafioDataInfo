@@ -38,7 +38,7 @@ public class UsuarioServico {
 	}
 
 	public Usuario acessoLogin(String email, String senha) {
-		return this.repositorio.VerificaAcesso(email, senha);
+		return this.repositorio.verificaAcesso(email, senha);
 
 	}
 

@@ -1,11 +1,7 @@
 package desafiosefaz.teste;
 
-import desafiosefaz.bean.UsuarioCadastroBean;
-import desafiosefaz.model.Telefone;
 import desafiosefaz.model.Usuario;
-import desafiosefaz.repositorio.UsuarioRepositorio;
 import desafiosefaz.repositorio.UsuarioRepositorioImpl;
-import desafiosefaz.servico.UsuarioServico;
 
 public class Teste {
 
@@ -21,7 +17,7 @@ public class Teste {
 		  UsuarioRepositorioImpl UR = new UsuarioRepositorioImpl();
 		  
 		  
-		 Usuario usu = UR.VerificaAcesso("wagner", "3347");
+		 Usuario usu = UR.verificaAcesso("wagner", "3347");
 		  if(usu != null) {
 			  System.out.println("PODE ACESSAR , TEM EMAIL E SENHA NO BANCO");
 		  }else {

@@ -1,5 +1,6 @@
 package desafiosefaz.fachada;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import desafiosefaz.model.Usuario;
@@ -21,6 +22,7 @@ public class UsuarioFachada {
 	}
 
 	public void cadastrarUsuario(Usuario usuario) {
+		
 		usuarioServicoInstancia.salvar(usuario);
 	}
 

@@ -18,5 +18,5 @@ public interface UsuarioRepositorio {
 	
 	public Usuario buscarPorId( int id);
 	
-	public Usuario VerificaAcesso( String email,String senha);
+	public Usuario verificaAcesso( String email,String senha);
 }
