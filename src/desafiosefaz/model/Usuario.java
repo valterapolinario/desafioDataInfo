@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
@@ -28,28 +29,20 @@ public class Usuario {
 	@Column(name = "id_usuario")
 	private Integer id;
 	@Column
-	@NotNull(message = " informe um nome")
+
 	// @Pattern(regexp = "/^[a-z](?:[a-z]| (?! |$))",message = "Informe um nome
 	// valido")
 	private String nome;
 	@Column
-	@NotNull(message = "informe um email")
+
 	@Email(message = "informe um email valido")
 	private String email;
 	@Column
-	@NotNull(message = "informe a senha logo")
+
 	private String senha;
+	
 	@Column
-	@Range(min = 11, max = 99, message = " o ddd varia entre 11 e 99")
-	private int ddd;
-	@Column
-	@NotNull(message = "insira o numero de telefone")
-	// @Pattern(regexp = "(\\b[0-9]\\b)/g",message = "apenas numeros")
-	private String numero;
-	@Column
-	// @NotNull(message = "insira o tipo do telefone")
-	private String tipo;
-	@Column
+	@PastOrPresent(message = "A data informada não pode ser uma data futura .")
 	private Date dataNascimento;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
@@ -59,15 +52,12 @@ public class Usuario {
 
 	}
 
-	public Usuario(Integer id, String nome, String email, String senha, int ddd, String numero, String tipo) {
+	public Usuario(Integer id, String nome, String email, String senha) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
-		this.ddd = ddd;
-		this.numero = numero;
-		this.tipo = tipo;
 	}
 
 	public String getNome() {
@@ -109,30 +99,7 @@ public class Usuario {
 	public void setTelefones(List<Telefone> telefones) {
 		this.telefones = telefones;
 	}
-
-	public int getDdd() {
-		return ddd;
-	}
-
-	public void setDdd(int ddd) {
-		this.ddd = ddd;
-	}
-
-	public String getNumero() {
-		return numero;
-	}
-
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
-
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
+	
 
 	public Date getDataNascimento() {
 		return dataNascimento;
@@ -141,7 +108,7 @@ public class Usuario {
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	
+
 	// verificado
 
 }

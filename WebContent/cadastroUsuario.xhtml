@@ -14,14 +14,14 @@
 
 <b:container>
 
-	<h:form >
-	<p:messages autoUpdate="true">
-
+	<h:form  >
+	<p:messages>
+<p:autoUpdate/>
 </p:messages>
 		<div class="container">
 			<div class="box">
 				
-				<h2 align="center">Cadastro Usuario</h2>      		<!-- Metodo , Classe usuario e o get no nome -->
+				<h2 align="center">Cadastro Usuario</h2>      		
 				<b:inputText id="nome" placeholder="Nome" value="#{usuarioCadastroBean.usuario.nome}" />
 				<b:message for="@previous"/>
 				<b:focus target="@previous" />
@@ -37,20 +37,22 @@
 				 value="#{usuarioCadastroBean.usuario.senha}" placeholder="Senha" />
 				 
 				 
-				 <p:password id="confirma" required="true" placeholder="Confime a senha"/> 
+				 <p:password id="confirma" required="true" placeholder="Confime a senha" requiredMessage="deve ser realizado a confimação de senha"/> 
 				
 			
 				<b:message for="@previous"/>
-				<b:inputText id="ddd" placeholder="ddd"  value="#{usuarioCadastroBean.usuario.ddd}" maxlength="2" />
+				<p:inputText id="ddd" placeholder="ddd"  value="#{usuarioCadastroBean.telefone.ddd}" maxlength="2"/>
 				<b:message for="@previous"/>
-				<b:inputText id="numero" placeholder="numero do telefone" type="text"  value="#{usuarioCadastroBean.usuario.numero}"/>
+				<b:inputText id="numero" placeholder="numero do telefone" type="text"  value="#{usuarioCadastroBean.telefone.numero}"/>
 				<b:message for="@previous"/>
-				<b:inputText id="tipo" placeholder="tipo"  value="#{usuarioCadastroBean.usuario.tipo}"/>
+				<b:inputText id="tipo" placeholder="tipo"  value="#{usuarioCadastroBean.telefone.tipo}"/>
 				<b:message for="@previous"/>
 				<b:inputText id="dataNascimento" mask="dd/mm/yyyy" placeholder="dataNascimento" value="#{usuarioCadastroBean.usuario.dataNascimento}">
 				<f:convertDateTime pattern="dd/MM/yyyy"/>
 				</b:inputText>
-				<p:commandButton action="#{usuarioCadastroBean.cadastrarUsuario}" look="primary btn-block" value="Cadastrar"  />
+				<p:commandButton action="#{usuarioCadastroBean.cadastrarUsuario}" look="primary btn-block"  value="Cadastrar">
+				
+				</p:commandButton>
 
 			</div>
 		</div>

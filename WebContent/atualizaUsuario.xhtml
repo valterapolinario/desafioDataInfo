@@ -25,10 +25,15 @@
 				<b:message for="@previous"/>
 				<b:inputText id="senha" placeholder="Senha" type="password" value="#{usuarioAtualizaBean.usuario.senha}"/>
 				<b:message for="@previous"/>
-				<b:inputText id="ddd" placeholder="ddd"  value="#{usuarioAtualizaBean.usuario.ddd}"/>
+				<ui:repeat var="telefone" value="#{usuarioAtualizaBean.usuario.telefones}">
+				
+				<b:inputText id="ddd" placeholder="ddd"  value="#{telefone.ddd}"/>
 				<b:message for="@previous"/>
-				<b:inputText id="numero" placeholder="numero do telefone" type="number"  value="#{usuarioAtualizaBean.usuario.numero}"/>
-				<b:inputText id="tipo" placeholder="tipo"  value="#{usuarioAtualizaBean.usuario.tipo}"/>
+				<b:inputText id="numero" placeholder="numero do telefone" type="number"  value="#{telefone.numero}"/>
+				<b:inputText id="tipo" placeholder="tipo"  value="#{telefone.tipo}"/>
+				
+				</ui:repeat>
+				
 				<b:message for="@previous"/>
 				<b:commandButton action="#{usuarioAtualizaBean.atualizarUsuario()}" look="primary btn-block" value="Atualizar" />
 				

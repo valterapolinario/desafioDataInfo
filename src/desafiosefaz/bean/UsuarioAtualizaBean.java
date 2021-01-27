@@ -1,9 +1,12 @@
 package desafiosefaz.bean;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import desafiosefaz.fachada.UsuarioFachada;
+import desafiosefaz.model.Telefone;
 import desafiosefaz.model.Usuario;
 
 @ManagedBean
@@ -11,6 +14,7 @@ import desafiosefaz.model.Usuario;
 public class UsuarioAtualizaBean {
 	private Usuario usuario;
 
+	
 	UsuarioFachada fachada = new UsuarioFachada();
 
 	public Usuario getUsuario() {
@@ -33,9 +37,11 @@ public class UsuarioAtualizaBean {
 		return "cadastroUsuario.xhtml";
 	}
 
-	public String alterar(Usuario obj) {
+	public String alterar(Usuario obj, List<Telefone>telefones) {
 		this.usuario = obj;
+		this.usuario.setTelefones(telefones);
 		return "atualizaUsuario.xhtml";
 	}
+	
 
 }

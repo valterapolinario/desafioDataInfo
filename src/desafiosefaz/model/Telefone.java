@@ -15,15 +15,15 @@ public class Telefone {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_telefone")
-	private int id;
+	private Integer id;
 	@Column
 	@NotNull(message = "insira o ddd")
 	private int ddd;
 	@Column
-	@NotNull(message = "insira o numero")
+	@NotNull(message = "insira o numero do telefone")
 	private String numero;
 	@Column
-	@NotNull(message = "insira o tipo")
+	@NotNull(message = "insira o tipo do telefone")
 	private String tipo;
 	@ManyToOne
 	@JoinColumn(name = "usuario_id")

@@ -14,18 +14,6 @@ public class Teste {
 		 * Usuario u = new Usuario ();
 		 */
 		  
-		  UsuarioRepositorioImpl UR = new UsuarioRepositorioImpl();
-		  
-		  
-		 Usuario usu = UR.verificaAcesso("wagner", "3347");
-		  if(usu != null) {
-			  System.out.println("PODE ACESSAR , TEM EMAIL E SENHA NO BANCO");
-		  }else {
-			  System.out.println("não tem acesso , retorno é null");
-		  }
-		  
-		  
-		  
 		/*
 		 * telefone.setDdd(81); telefone.setNumero("996651727");
 		 * telefone.setTipo("celular"); u.setNome("lucas");
