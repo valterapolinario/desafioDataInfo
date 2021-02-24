@@ -31,6 +31,7 @@ public class Usuario {
 	private Integer id;
 	@Column
 	@NotBlank(message = " o nome não pode estar em branco")
+	@Pattern(regexp = "/\b[A-Za-zÀ-ú][A-Za-zÀ-ú]+,?\\s[A-Za-zÀ-ú][A-Za-zÀ-ú]{2,19}\b/gi")
 	private String nome;
 	@Column
 
