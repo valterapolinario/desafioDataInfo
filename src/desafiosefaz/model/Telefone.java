@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -20,10 +22,10 @@ public class Telefone {
 	@NotNull(message = "insira o ddd")
 	private int ddd;
 	@Column
-	@NotNull(message = "insira o numero do telefone")
+	@NotBlank(message = "insira o numero do telefone")
 	private String numero;
 	@Column
-	@NotNull(message = "insira o tipo do telefone")
+	@NotBlank(message = "insira o tipo do telefone")
 	private String tipo;
 	@ManyToOne
 	@JoinColumn(name = "usuario_id")

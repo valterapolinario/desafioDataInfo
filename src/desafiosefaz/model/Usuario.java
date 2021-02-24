@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
@@ -29,9 +30,7 @@ public class Usuario {
 	@Column(name = "id_usuario")
 	private Integer id;
 	@Column
-
-	// @Pattern(regexp = "/^[a-z](?:[a-z]| (?! |$))",message = "Informe um nome
-	// valido")
+	@NotBlank(message = " o nome não pode estar em branco")
 	private String nome;
 	@Column
 
@@ -109,6 +108,6 @@ public class Usuario {
 		this.dataNascimento = dataNascimento;
 	}
 
-	// verificado
+	
 
 }
